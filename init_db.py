@@ -1,8 +1,9 @@
-from pymongo import MongoClient
+from pymongo import MongoClient, SLOW_ONLY
 import random
 
 client = MongoClient('127.0.0.1', 27017)
 db = client.test_db
+db.set_profiling_level(SLOW_ONLY)
 
 
 def data_maker(len):
