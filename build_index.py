@@ -10,3 +10,4 @@ def build_index(col, field):
 if __name__ == '__main__':
     build_index(db.lg, 'key')
     build_index(db.lg, 'sub_key')
+    db.lg.create_index([('key', DESCENDING), ('sub_key', DESCENDING)])
